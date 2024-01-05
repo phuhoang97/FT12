@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Table with Rowspan</title>
+  </head>
+  <body>
+    <table border="1">
+      <!-- Phần đầu bảng -->
+      <thead>
+        <tr>
+          <th>Quý</th>
+          <th>Tháng</th>
+          <th>Doanh thu</th>
+        </tr>
+      </thead>
+
+      <!-- Phần thân bảng -->
+      <tbody>
+        <!-- ND 1 -->
+        <tr>
+          <td rowspan="3">Một</td>
+          <td>Một</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>Hai</td>
+          <td>$80</td>
+        </tr>
+        <tr>
+          <td>Ba</td>
+          <td>$80</td>
+        </tr>
+
+        <!-- ND2 -->
+        <tr>
+          <td rowspan="3">Hai</td>
+          <td>Bốn</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>Năm</td>
+          <td>$80</td>
+        </tr>
+        <tr>
+          <td>Sáu</td>
+          <td>$80</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Table</title>
+  </head>
+  <body>
+    <!-- 
+        Thẻ table: Định nghĩa bảng
+        Thẻ thead: Định nghĩa header của bảng
+        Thẻ tr: Định nghĩa dòng
+        Thẻ th: Định nghĩa cột cho dòng đối với header
+        Thẻ tbody: Định nghĩa vùng body cho bảng
+        Thẻ td: Định nghĩa cột cho phần body
+        Thẻ tfoot: Định nghĩa phần chân bảng
+        Thuộc tính colspan: Dùng để chiếm nhiều cột
+        Thuộc tính rowspan: Dùng để chiếm nhiều dòng
+        Thuộc tính border: Để tạo đường viền cho bảng
+     -->
+    <table border="1">
+      <!-- Đầu bảng -->
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name Product</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <!-- Thân bảng -->
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Áo Thun</td>
+          <td>1200</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Quần bò</td>
+          <td>1400</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>Giầy</td>
+          <td>2400</td>
+        </tr>
+      </tbody>
+
+      <!-- Chân bảng -->
+      <tfoot>
+        <tr>
+          <td colspan="2">Tổng tiền</td>
+          <td>6600</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
