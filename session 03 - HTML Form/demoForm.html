@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Form</title>
+  </head>
+  <body>
+    <form>
+      <label>FirstName: </label>
+      <input type="text" disabled />
+      <br />
+      <br />
+      <label>LastName: </label>
+      <input type="text" />
+      <br />
+      <br />
+      <!-- Password -->
+      <label>Password: </label>
+      <input type="text" />
+      <br />
+      <br />
+      <!-- Radio -->
+      <input type="radio" name="gender" checked />
+      <label>Nam</label> <br />
+      <input type="radio" name="gender" />
+      <label>Nữ</label> <br />
+      <input type="radio" name="gender" />
+      <label>Khác</label> <br /><br />
+
+      <!-- Checkbox -->
+      <input type="checkbox" />
+      <label>Learning HTML</label> <br />
+      <input type="checkbox" />
+      <label>Learning CSS</label> <br />
+      <input type="checkbox" />
+      <label>Learning Javascript</label> <br /><br />
+
+      <!-- Color -->
+      <label>Color</label>
+      <input type="color" /> <br />
+      <!-- Date -->
+      <label>Date</label>
+      <input type="date" /><br />
+      <!-- Datetime-local -->
+      <label>Datetime-local</label>
+      <input type="datetime-local" /><br />
+      <!-- Email -->
+      <label>Email</label>
+      <input type="email" /><br />
+      <!-- Month -->
+      <label>Month</label>
+      <input type="month" /><br />
+      <!-- Number -->
+      <label>Number</label>
+      <input type="number" /><br />
+      <!-- Range -->
+      <label>Range</label>
+      <input type="range" min="0" max="50" /><br />
+      <!-- Search -->
+      <label>search</label>
+      <input type="search" /><br />
+      <!-- Tel -->
+      <label>Tel</label>
+      <input type="tel" /><br />
+      <!-- Time -->
+      <label>Time</label>
+      <input type="time" /><br />
+
+      <!-- Select option -->
+      <label>Chọn khóa học: </label>
+      <select>
+        <option value="HTML">HTML</option>
+        <option value="CSS" selected>CSS</option>
+        <option value="JS" disabled>JS</option>
+      </select>
+      <br />
+
+      <!-- textarea -->
+      <textarea cols="30" rows="10"></textarea>
+
+      <br /><br />
+      <button>Submit</button>
+      <!-- Reset -->
+      <input type="reset" value="reset" />
+    </form>
+    <br />
+    <br />
+    <!-- Các loại type trong input
+        type="text": Hiển thị chữ
+        type="submit" Tạo ra nút tương đương như button -> sử dụng thuộc tính value để đặt tên (Không khuyến cáo) 
+        type="password" Giá trị ng dùng nhập vào sẽ được ẩn
+        type="reset" Dùng để reset lại giá trị các trường
+        type="radio" Dùng để chọn 1 trong các lựa chọn cần kết hợp với thuộc tính name
+    -->
+    <label>type="text" :</label>
+    <input type="text" /><br />
+    <label>type="submit" :</label>
+    <input type="submit" value="Submit" /><br />
+    <label>type="password" :</label>
+    <input type="password" /><br />
+    <label>type="reset" :</label>
+    <input type="reset" value="reset" /><br />
+    <label>type="radio" :</label>
+    <input type="radio" /><br />
+  </body>
+</html>
