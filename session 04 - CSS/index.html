@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo CSS</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- 
+      Truy cập cùng cấp: ./
+      Truy cập ngoài cấp: ../
+    -->
+  </head>
+  <style>
+    .internal {
+      background-color: limegreen;
+    }
+
+    .priority {
+      background-color: green;
+      color: chartreuse;
+    }
+  </style>
+  <body>
+    <!-- Các cách sử dụng CSS -->
+    <!-- Inline Style - Viết trực tiếp vào trong thẻ -->
+    <div style="background-color: pink">Inline Style</div>
+    <!-- Internal Style - Viết thông qua cặp thẻ style -->
+    <div class="internal">Internal Style</div>
+    <!-- External Style - Viết thông qua file có đuôi mở rộng là .css-->
+    <div class="external">External Style</div>
+
+    <!-- Sự ưu tiên -->
+    <!-- Inline > (Internal == External)-->
+    <div style="background-color: red; color: yellow" class="priority">
+      Sự ưu tiên
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Selector</title>
+  </head>
+  <style>
+    /* div {
+      background-color: pink;
+    } */
+
+    /* Sử dụng với id => # */
+    #div-one {
+      background-color: limegreen;
+    }
+    /* Sử dụng với class => . */
+    .div-two {
+      background-color: lightblue;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* div p {
+      background-color: aqua;
+    } */
+
+    /* div,
+    span {
+      background-color: red;
+    } */
+
+    /* div + p {
+      background-color: aqua;
+    } */
+
+    div > p {
+      background-color: aqua;
+    }
+
+    span:hover {
+      background-color: brown;
+    }
+  </style>
+  <body>
+    <!-- Bộ chọn - Selector -->
+    <!-- 
+        + * -> Thường được sử dụng để reset lại trang web
+        + tag -> Chọn các thẻ cùng loại
+        + tag01 tag02 -> chọn tất cả thành phần tag02 bên trong tag01
+        + tag01, tag02 -> Chọn tất cả thành phần tag01 và tag02
+        + tag01 + tag02 -> Chọn phần tử tag02 kế bên tag01
+        + tag01 > tag02 -> Chọn tât cả phần từ tag02 có thành phần cha là tag01
+
+        + .class -> Gọi đến thẻ
+        + #id -> Gọi đến thẻ
+        + :hover -> Khi con trỏ chuột đi qua
+
+     -->
+    <!-- <div id="div-one" class="hello hello1">Hello World 1</div>
+    <div id="div-two" class="div-two">Hello World 2</div>
+    <div id="div-three">Hello World 3</div> -->
+
+    <div>
+      <div>Hello</div>
+      <p>Anh Tự</p>
+      <span>Anh Tuấn</span>
+      <p>Anh Tiệp</p>
+    </div>
+  </body>
+</html>

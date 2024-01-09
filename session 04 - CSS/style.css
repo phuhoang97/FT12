@@ -1,0 +1,8 @@
+.external {
+  background-color: lightsalmon;
+}
+
+.priority {
+  background-color: blue !important;
+  color: brown;
+}
