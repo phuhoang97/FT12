@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai tap 2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      /* border: 1px solid black; */
+      margin: 100px;
+      padding: 20px;
+      width: 800px;
+    }
+
+    .container h2 {
+      margin-bottom: 15px;
+    }
+
+    .content-one {
+      color: rgb(190, 81, 116);
+      background-color: rgb(237, 248, 245);
+    }
+
+    .centered {
+      border: 3px solid green;
+      text-align: center;
+      height: 50px;
+      margin-top: 10px;
+      line-height: 43px;
+    }
+
+    .content-two {
+      background-color: rgb(229, 232, 237);
+      padding: 20px;
+      margin-top: 20px;
+      margin-left: -20px;
+      width: 798px;
+      border-radius: 5px;
+    }
+
+    .content-center {
+      background-color: white;
+      border-left: 3px solid rgb(10, 169, 116);
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .content-center p:nth-child(1) {
+      color: rgb(195, 125, 130);
+    }
+
+    .content-center .text-p {
+      color: rgb(201, 23, 23);
+      padding-left: 10px;
+    }
+
+    .text-blue {
+      color: rgb(26, 26, 226);
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: rgb(10, 169, 116);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      height: 30px;
+      width: 120px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <!-- Content 1 -->
+      <h2>Center Align Text</h2>
+      <p>
+        To just center the text inside an element, use
+        <span class="content-one">text-align: center</span>
+      </p>
+      <p class="centered">This text is centered.</p>
+
+      <!-- Content 2 -->
+      <div class="content-two">
+        <h4>Example</h4>
+        <div class="content-example">
+          <!-- content 2.1 -->
+          <div class="content-center">
+            <p>.center {</p>
+            <p class="text-p">
+              text-align <span class="text-blue">: center;</span>
+            </p>
+            <p class="text-p">
+              border <span class="text-blue">: 3px solid green;</span>
+            </p>
+            <p>}</p>
+          </div>
+          <!-- content 2.2 -->
+          <button>Try It Yourself >></button>
+        </div>
+      </div>
+    </div>
+
+    <i class="fa-solid fa-chevron-up"></i>
+    <i class="fa-solid fa-chevron-down"></i>
+    <i class="fa-brands fa-facebook" style="color: blue; font-size: 50px"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-solid fa-eye"></i>
+    <i class="fa-solid fa-eye-slash"></i>
+  </body>
+</html>

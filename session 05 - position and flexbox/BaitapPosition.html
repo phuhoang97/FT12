@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Baitap Position</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+    }
+    nav {
+      background-color: rgb(136, 136, 136);
+      height: 40px;
+      position: sticky;
+      top: 10px;
+    }
+
+    ul {
+      display: flex;
+    }
+    li {
+      position: relative;
+      cursor: pointer;
+      color: white;
+      padding: 10px;
+    }
+
+    .sub-menu {
+      position: absolute;
+      background-color: rgb(188, 187, 187);
+      display: none;
+      top: 100%;
+      padding: 5px;
+    }
+
+    li:hover .sub-menu {
+      display: block;
+    }
+
+    li:hover {
+      background-color: rgb(212, 204, 193);
+    }
+
+    body {
+      height: 200vh;
+    }
+  </style>
+  <body>
+    <nav>
+      <ul>
+        <li>Main Item 1</li>
+        <li>
+          Main Item 2
+          <ul class="sub-menu">
+            <li>Item 2.1</li>
+            <li>Item 2.2</li>
+            <li>Item 2.3</li>
+          </ul>
+        </li>
+        <li>Main Item 3</li>
+      </ul>
+    </nav>
+  </body>
+</html>

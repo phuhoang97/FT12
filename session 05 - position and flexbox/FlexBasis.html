@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Flexbox + Basis</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .content {
+      border: 1px solid black;
+      flex-basis: 30%;
+      padding: 10px;
+    }
+
+    /* flex:  */
+
+    .content:nth-child(1) {
+      background-color: lightcoral;
+      flex: 1;
+    }
+
+    .content:nth-child(2) {
+      background-color: lightgreen;
+    }
+
+    .content:nth-child(3) {
+      background-color: lightblue;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <!-- Content 1 -->
+      <div class="content">
+        <h3>Content 1</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          delectus blanditiis vero dicta praesentium cumque. Similique
+          perspiciatis necessitatibus at accusantium, ad et maiores tenetur
+          laboriosam deleniti quis quasi voluptatibus fugiat sit placeat
+          blanditiis cumque consequuntur ipsam aliquam? Nihil accusamus alias
+          dolores aliquam, maiores officia necessitatibus. Error consectetur
+          delectus totam soluta.
+        </p>
+      </div>
+
+      <!-- Content 2 -->
+      <div class="content">
+        <h3>Content 2</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          delectus blanditiis vero dicta praesentium cumque. Similique
+          perspiciatis necessitatibus at accusantium, ad et maiores tenetur
+          laboriosam deleniti quis quasi voluptatibus fugiat sit placeat
+          blanditiis cumque consequuntur ipsam aliquam? Nihil accusamus alias
+          dolores aliquam, maiores officia necessitatibus. Error consectetur
+          delectus totam soluta.
+        </p>
+      </div>
+
+      <!-- Content 3 -->
+      <div class="content">
+        <h3>Content 3</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          delectus blanditiis vero dicta praesentium cumque. Similique
+          perspiciatis necessitatibus at accusantium, ad et maiores tenetur
+          laboriosam deleniti quis quasi voluptatibus fugiat sit placeat
+          blanditiis cumque consequuntur ipsam aliquam? Nihil accusamus alias
+          dolores aliquam, maiores officia necessitatibus. Error consectetur
+          delectus totam soluta.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

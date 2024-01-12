@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập 1</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background-color: lightpink;
+      width: 600px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* form {
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+    } */
+    label {
+      display: inline-block;
+      width: 80px;
+    }
+
+    /* .flex-div {
+      display: flex;
+    }
+
+    input {
+      flex: 1;
+    } */
+  </style>
+  <body>
+    <div class="container">
+      <form>
+        <div class="flex-div">
+          <label>Email: </label>
+          <input type="email" placeholder="Nhập Email ..." />
+        </div>
+        <br />
+        <br />
+
+        <div class="flex-div">
+          <label>Password: </label>
+          <input type="password" placeholder="Nhập Password ..." />
+        </div>
+        <br />
+      </form>
+    </div>
+  </body>
+</html>

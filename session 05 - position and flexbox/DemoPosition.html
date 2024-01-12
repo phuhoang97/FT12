@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Position</title>
+  </head>
+  <style>
+    .relative {
+      position: relative;
+      background-color: lightgreen;
+      width: 100px;
+      height: 100px;
+      left: 50px;
+      top: 100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background-color: rgb(242, 197, 179);
+      height: 500px;
+    }
+    .box {
+      height: 100px;
+      width: 100px;
+      border: 1px solid black;
+    }
+
+    .box-1 {
+      background-color: lightcoral;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      /* z-index: 3; */
+    }
+
+    .box-2 {
+      background-color: lightblue;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      /* z-index: 2; */
+    }
+
+    .box-3 {
+      background-color: lightgreen;
+      position: absolute;
+      top: 150px;
+      left: 150px;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 10px;
+      background-color: blue;
+    }
+
+    p {
+      height: 200vh;
+    }
+
+    .static {
+      position: static;
+      top: 0;
+      left: 20px;
+    }
+
+    .fixed {
+      position: fixed;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: cadetblue;
+      bottom: 10px;
+      right: 20px;
+    }
+  </style>
+  <body>
+    <!-- 
+        UI / UX:
+
+        - Position giúp cho việc căn chỉnh các thành phần dễ dàng hơn
+
+        -> Khi mà sử dụng Position thì có thể sử dụng các thuộc tính: 
+        top, left, right, bottom, z-index
+
+        Các thuộc tính trong positon: 
+            + position: relative -> Vị trí tương đối - Lấy chính bản thân làm mốc tọa độ
+            + position: absolute -> Vị trí tuyệt đối - Sẽ lấy position gần nhất làm gốc tọa độ
+            nếu không có thì sẽ lấy cửa sổ window để làm gốc tọa độ
+            + position: sticky -> Vị trí window
+            + postion: fixed -> Vị trí window
+            + position: static -> 
+
+            sticky -> được áp dụng làm thanh navbar
+            fixed -> được áp button đứng yên
+            relative + absolute -> Để điều chỉnh giao diện
+     -->
+
+    <!-- <div class="relative">Position: Relative</div> -->
+    <div class="container">
+      <div class="box box-1">Box 1</div>
+      <div class="box box-2">Box 2</div>
+      <div class="box box-3">Box 3</div>
+    </div>
+
+    <div class="sticky">Đây là Nav</div>
+    <p></p>
+
+    <div class="fixed">fixed</div>
+
+    <!-- <div class="static">Position: Static</div> -->
+  </body>
+</html>

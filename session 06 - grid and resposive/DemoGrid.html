@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Grid</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background-color: lightsteelblue;
+      /* Grid */
+      display: grid;
+
+      /* Xác định cột */
+
+      /* fr -> fraction */
+      /* grid-template-columns: 100px 200px 100px; */
+      /* grid-template-columns: 1fr 2fr 1fr; */
+      grid-template-columns: repeat(3, 1fr);
+
+      /* Xác định dòng */
+      /* grid-template-columns: 100px 200px; */
+
+      /* grid-template-rows: 100px 100px 100px; */
+      /* grid-template-rows: 1fr 1fr 1fr; */
+      /* grid-template-rows: repeat(3, 1fr); */
+
+      /* grid-auto-rows: minmax(20px, auto); */
+      /* grid-auto-columns: minmax(20px, auto); */
+
+      /* grid-template-areas:
+        "header header header header"
+        "navbar navbar navbar navbar"
+        "content content main main"
+        "content content menu menu"
+        "footer footer footer footer"; */
+
+      /* Grid start - Grid end */
+    }
+
+    .item {
+      border: 1px solid black;
+      padding: 30px;
+    }
+
+    .item .item-1 {
+      /* grid-area: header; */
+      /* grid-row-start: 1;
+      grid-row-end: 3; */
+
+      grid-row: 1/3;
+    }
+
+    .item .item-2 {
+      /* grid-area: navbar; */
+      /* grid-column-start: 2;
+      grid-column-end: 4; */
+
+      grid-column: 2/4;
+    }
+
+    .item-3 {
+      /* grid-area: content; */
+    }
+
+    .item-4 {
+      /* grid-area: main; */
+    }
+
+    .item-5 {
+      /* grid-area: menu; */
+    }
+
+    .item-6 {
+      /* grid-area: footer; */
+      grid-row: 2/4;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item item-1">Item 1 - Header</div>
+      <div class="item item-2">Item 2 - NavBar</div>
+      <div class="item item-3">Item 3 - Content</div>
+      <div class="item item-4">Item 4 - Main</div>
+      <div class="item item-5">Item 5 - Menu</div>
+      <div class="item item-6">Item 6 - Footer</div>
+    </div>
+  </body>
+</html>

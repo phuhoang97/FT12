@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Wrap</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background-color: rgb(221, 236, 248);
+      height: 500px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 50px;
+    }
+
+    .item {
+      background-color: rgb(222, 71, 71);
+      width: calc(33.33% - 80px);
+      height: 60px;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+      <div class="item">Item 7</div>
+      <div class="item">Item 8</div>
+      <div class="item">Item 9</div>
+    </div>
+  </body>
+</html>
