@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Responsive</title>
+  </head>
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "content article article"
+        "content article article"
+        "footer footer footer";
+      background-color: rgb(228, 245, 250);
+      border: 1px solid black;
+      gap: 20px;
+      grid-template-rows: 100px 200px 200px 100px;
+    }
+    .header {
+      grid-area: header;
+      border: 1px solid black;
+    }
+    .content {
+      grid-area: content;
+      border: 1px solid black;
+    }
+
+    .article {
+      grid-area: article;
+      border: 1px solid black;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 100px;
+      gap: 20px;
+    }
+
+    .footer {
+      grid-area: footer;
+      border: 1px solid black;
+    }
+
+    .item {
+      width: 100px;
+      height: 100px;
+      background-color: lightcoral;
+      border: 1px solid black;
+    }
+    /* 320px <= x <= 480px */
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .article {
+        display: none;
+      }
+    }
+
+    /* <= 600px */
+    @media only screen and (min-width: 600px) {
+      .article {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    /* nhỏ nhất (>=) 768px */
+    @media only screen and (min-width: 768px) {
+      .article {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    /* nhỏ nhất (>=) 1000px */
+    @media only screen and (min-width: 1000px) {
+      .article {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header">Header</div>
+      <div class="content">Content</div>
+      <div class="article">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+  </body>
+</html>
