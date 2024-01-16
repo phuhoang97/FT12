@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Text Color Animation</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .animated-text {
+      font-size: 2em;
+      font-weight: bold;
+      background: linear-gradient(to right, #ff0000, #00ff00);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: colorChange 5s linear infinite;
+    }
+
+    @keyframes colorChange {
+      0% {
+        background-position: 100% 0;
+      }
+      100% {
+        background-position: -100% 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="animated-text">Hello, Gradient Text!</div>
+  </body>
+</html>
