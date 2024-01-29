@@ -163,3 +163,288 @@
     Ví dụ: nếu bạn nhập vào chuỗi 'Keep Calm And Code On' 
     kết quả của chương trình là 'kEEP cALM aND cODE oN'.
 */
+
+// Bài 1:
+
+// let myPet = ["Lion", "Tiger", "Wolf", "Kangaroo"];
+// console.log(myPet.join(", "));
+
+// Bài 2:
+// let number = prompt("Nhập 1 số bất kỳ");
+// let result = [number[0]];
+// // [2]
+
+// for (let i = 1; i < number.length; i++) {
+//   if (number[i - 1] % 2 === 0 && number[i] % 2 === 0) {
+//     result.push("-", number[i]);
+//   } else {
+//     result.push(number[i]);
+//   }
+// }
+
+// console.log(result.join(""));
+
+// Bài 3:
+// input: 'Keep Calm And Code On'
+// output: 'kEEP cALM aND cODE oN'.
+
+// Cách 1:
+// let str = "Keep Calm And Code On";
+// let newStr = "";
+
+// for (let i = 0; i < str.length; i++) {
+//   let element = str[i];
+//   if (element === element.toUpperCase()) {
+//     newStr += element.toLowerCase();
+//   } else {
+//     newStr += element.toUpperCase();
+//   }
+// }
+
+// console.log(newStr);
+
+// Cách 2:
+
+// let str = prompt("Nhập gì đấy");
+// // convert từ string => array
+// let giday = str.split("");
+// //   .map((e) => (e === e.toUpperCase() ? e.toLowerCase() : e.toUpperCase()))
+// //   .join("");
+
+// let newArr = [];
+// for (let i = 0; i < giday.length; i++) {
+//   let element = giday[i];
+//   if (element === element.toUpperCase()) {
+//     newArr.push(element.toLowerCase());
+//   } else {
+//     newArr.push(element.toUpperCase());
+//   }
+// }
+
+// console.log(newArr.join(""));
+
+/*
+    Bài tập 1: Tính tổng các phần tử trong mảng
+    + Cho mảng ban đầu. Tính tổng các phẩn tử trong mảng. Ví dụ:
+    Input: [1,2,3]
+    Ouput: 6
+
+    Bài tập 2: Tìm phần tử lớn nhất trong mảng
+    + Cho mảng ban đầu. Tìm phần tử lớn nhất. ví dụ:
+    Input: [1,2,3]
+    Output: 3
+
+    Bài tập 3: Tìm phần tử nhỏ nhất trong mảng
+    + Cho mảng ban đầu. Tìm phần tử nhỏ nhất. ví dụ:
+    Input: [10,8,2,6]
+    Output: 2
+
+*/
+
+// Bài tập 1:
+// let arrNum = prompt("Nhập các số cách nhau bằng dấu ', ' "); // => datatype string
+// let newArr = arrNum.split(","); // string => array
+
+// let sum = 0;
+
+// for (let i = 0; i < newArr.length; i++) {
+//   sum += Number(newArr[i]);
+// }
+
+// console.log(sum);
+
+// Bài tập 2: Tìm phần tử lớn nhất trong mảng
+//     + Cho mảng ban đầu. Tìm phần tử lớn nhất. ví dụ:
+//     Input: [4, 5, 2, 7, 8]
+//     Output: 3
+
+//  [2, 4, 5, 7, 8]
+// length - 1;
+
+// let inputUser = prompt("Nhập các số cách nhau bằng dấu ', ' "); // => datatype string
+// let newArr = inputUser.split(","); // string => array
+
+// let max = newArr[0];
+
+// for (let i = 1; i < newArr.length; i++) {
+//   if (newArr[i] > max) {
+//     max = newArr[i];
+//   }
+// }
+
+// console.log(max);
+
+/* 
+    1,2,7,5,6.
+
+    1 || 2 || 7
+    2 > 1 => max = 2
+    7 > 2 => max = 7
+    5 > 7 => max = 7
+    6 > 7 => max = 7
+*/
+
+// Bài 3
+
+// let arr = [10, 8, 3, 5];
+// let min = arr[0];
+// for (let i = 1; i < arr.length; i++) {
+//   if (arr[i] < min) {
+//     min = arr[i];
+//   }
+// }
+// console.log(`Min là ${min}`);
+
+/* 
+    Bài tập 4: Kiểm tra xem phần tử có tồn tại trong mảng hay không
+    Cho mảng ban đầu, làm theo 2 cách:
+    + Cách 1: Không sử dụng hàm có sẵn
+    + Cách 2: Sử dụng hàm có sẵn
+    Input: [1, 2, 3, 4, 5];
+    Output: true/false
+*/
+
+// Cách 1:
+// let numberArr = [2, 1, 4, 3];
+// let flag = false;
+
+// for (let i = 0; i < numberArr.length; i++) {
+//   if (numberArr[i] == 3) {
+//     flag = true;
+//     break;
+//   }
+// }
+
+// alert(flag);
+
+// Hàm includes
+// let numberArr = [2, 1, 4, 3];
+
+// console.log(numberArr.includes(50));
+
+/* 
+    Bài 5: Đảo ngược mảng
+    input: [1,2,3,4,5]
+    output: [5,4,3,2,1]
+*/
+// Cách 1: Dùng hàm có sẵn
+// let a = prompt("Nhập các số cách nhau bằng dấu ','");
+// let arr = a.split(",");
+// console.log(arr.reverse().join(","));
+
+// Cách 2:
+// let a = prompt("Nhập các số cách nhau bằng dấu ','");
+// let arr = a.split(",");
+// let newArr = [];
+
+// for (let i = arr.length - 1; i >= 0; i--) {
+//   newArr.push(arr[i]);
+// }
+
+// console.log(newArr);
+
+/*
+    Bài tập 6: Lọc các phần tử chẵn trong mảng:
+    Input: [1, 2, 3, 4, 5]
+    Ouput: [2, 4]
+*/
+// cách 1
+// let arr = [1, 2, 3, 4, 5, 6];
+// let newArr = [];
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] % 2 === 0) {
+//     newArr.push(arr[i]);
+//   }
+// }
+// console.log(newArr);
+
+// cách 2:
+// let newArr = arr.filter((e) => e % 2 === 0);
+// console.log(newArr);
+
+/* 
+    Bài tập 7: Tìm số lần xuất hiện của một phần tử trong mảng
+    + Cho mảng ban đầu và cho người dùng nhập 1 giá trị bất kỳ. 
+    Nếu có giá trị trong mảng thì sẽ báo số lần phần tử xuất hiện trong mảng
+    Input: [1, 2, 3, 2, 4, 2, 5] => người dùng nhập 2
+    Output: Số 2 xuất hiện 3
+*/
+
+// let arr = [1, 2, 3, 2, 4, 2, 5];
+// let check = +prompt("Mời bạn nhập vào số để kiểm tra: ");
+// let count = 0;
+
+// for (let i = 0; i <= arr.length - 1; i++) {
+//   if (arr[i] === check) {
+//     count++;
+//   }
+// }
+
+// console.log(`Số lần xuất hiện của ${check} trong mảng là ${count}`);
+
+/*
+    Bài tập 8: Sắp xếp lại mảng theo giá trị tăng dần
+    Input: [4, 2, 9, 5, 1]
+    Output: [1, 2, 4, 5, 9]
+*/
+//
+// let arr = [4, 2, 9, 5, 1];
+
+// Cách 1:
+// arr.sort(function (a, b) {
+//   return a - b;
+// });
+// console.log(arr);
+
+// Cách 2:
+let arr = [4, 2, 9, 5, 1];
+//         0  1  2  3  4
+let tg;
+for (let i = 0; i < arr.length; i++) {
+  for (let j = i + 1; j < arr.length; j++) {
+    if (arr[i] > arr[j]) {
+      tg = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tg;
+    }
+  }
+}
+console.log(arr);
+
+// Thuật toán nổi bọt
+/*
+    tg = 4
+    4 = 2
+    2 = tg
+
+    => 2 4
+*/
+
+const quickSort = (arr) => {
+  if (arr.length < 2) return arr;
+
+  // *** lấy phần tử cuối của 'arr' làm 'pivot'
+  const pivotIndex = arr.length - 1;
+  const pivot = arr[pivotIndex];
+
+  const left = [];
+  const right = [];
+
+  let currentItem;
+  // *** 'i < pivotIndex' => chúng ta sẽ không loop qua 'pivot' nữa
+  for (let i = 0; i < pivotIndex; i++) {
+    currentItem = arr[i];
+
+    if (currentItem < pivot) {
+      left.push(currentItem);
+    } else {
+      right.push(currentItem);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+};
+
+console.log(quickSort([100, 2, 5, 4, 7, 5, 6, 8, 0, 12, 34, 15]));
+// *** => [0, 2, 4, 5, 5, 6, 7, 8, 12, 15, 34, 100]
