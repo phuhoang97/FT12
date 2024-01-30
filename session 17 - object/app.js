@@ -193,37 +193,218 @@
 
 // Bài 4:
 
-let product = [
+// let product = [
+//   {
+//     id: 1,
+//     name: "Sony Xperia XZ Premium",
+//     brand: "Sony",
+//     price: "4428",
+//     color: "White",
+//     category: "Phone",
+//   },
+//   {
+//     id: 2,
+//     name: "OPPO F3 Plus",
+//     brand: "OPPO",
+//     price: "5487",
+//     color: "Black",
+//     category: "Phone",
+//   },
+//   {
+//     id: 3,
+//     name: "IPhone 13 Pro max",
+//     brand: "Apple",
+//     price: "21490",
+//     color: "Gray",
+//     category: "Phone",
+//   },
+//   {
+//     id: 4,
+//     name: "Samsung Galaxy S8",
+//     brand: "Samsung",
+//     price: "8490",
+//     color: "Blue",
+//     category: "Phone",
+//   },
+// ];
+
+// let danhmuc = [
+//   {
+//     id: "1",
+//     name: "Sony Xperia XZ Premium",
+//     brand: "Sony",
+//     price: "4428",
+//     color: "White",
+//     category: "Phone",
+//   },
+//   {
+//     id: "2",
+//     name: "OPPO F3 Plus",
+//     brand: "OPPO",
+//     price: "5482",
+//     color: "Black",
+//     category: "Phone",
+//   },
+//   {
+//     id: "3",
+//     name: "IPhone 13 Pro max",
+//     brand: "Aplle",
+//     price: "21490",
+//     color: "Gray",
+//     category: "Phone",
+//   },
+//   {
+//     id: "4",
+//     name: "Samsung Galaxy S8",
+//     brand: "Samsung",
+//     price: "8490",
+//     color: "Blue",
+//     category: "Phone1",
+//   },
+// ];
+
+//1.1
+// for (let i=0 ; i<=danhmuc.length - 1; i++){
+//     console.log(
+// `Name: ${danhmuc[i].name}
+// Price: ${danhmuc[i].price}`
+//     );
+// }
+
+//1.2
+// let a = +prompt("enter product position");
+// let flag = false
+// for(let i=0 ; i<=danhmuc.length - 1; i++){
+//     if(a == danhmuc[i].id ){
+//         console.log(danhmuc[i]);
+//         flag = true
+//     }
+// }
+// if(flag == false){
+//     alert("nhập sai")
+// }
+
+//1.3
+
+// let printDanhmucByCate = () => {
+//     let inputCate = prompt("Nhập danh mục : ");
+//     let flag = false;
+
+//     for( let i = 0; i <= danhmuc.length - 1; i++) {
+//         if (inputCate === danhmuc[i].category) {
+//             flag = true;
+//             console.log(`
+//             Name: ${danhmuc[i].name}\n
+//             Price: ${danhmuc[i].price}\n
+//             ----------------------------
+//             `);
+//         }
+//     }
+//     if (flag == false) {
+//         alert("Nhập danh mục không hợp lệ");
+//     }
+// }
+
+// printDanhmucByCate();
+
+//1.4
+
+// for (let i = 0; i < danhmuc.length; i++) {
+//    let input = prompt("mời bạn nhập")
+//    danhmuc[i].providers = input
+
+// }
+// console.log(danhmuc[i]);
+
+//1.5
+
+// let n  = prompt("chon cac nha cung cap");
+// for(let i=0;i<danhmuc.length;i++){
+//     if(n=== danhmuc[i].providers){
+//         console.log(danhmuc[i]);
+//     }
+// }
+//2.1
+let job = [
   {
-    id: 1,
-    name: "Sony Xperia XZ Premium",
-    brand: "Sony",
-    price: "4428",
-    color: "White",
-    category: "Phone",
+    name: "HTML",
+    complete: false,
   },
   {
-    id: 2,
-    name: "OPPO F3 Plus",
-    brand: "OPPO",
-    price: "5487",
-    color: "Black",
-    category: "Phone",
+    name: "CSS",
+    complete: false,
   },
   {
-    id: 3,
-    name: "IPhone 13 Pro max",
-    brand: "Apple",
-    price: "21490",
-    color: "Gray",
-    category: "Phone",
-  },
-  {
-    id: 4,
-    name: "Samsung Galaxy S8",
-    brand: "Samsung",
-    price: "8490",
-    color: "Blue",
-    category: "Phone",
+    name: "JavaScript",
+    complete: false,
   },
 ];
+
+//2.2
+
+let inputUser;
+while (inputUser !== "E") {
+  inputUser = prompt("Nhap C/R/U/D/Complete/E");
+  switch (inputUser) {
+    case "C":
+      let inputValue = prompt("Nhap value");
+      let newObject = { name: inputValue, complete: false };
+      job.push(newObject);
+      console.log("Đây là nhiệm vụ học tập của bạn");
+      for (let i = 0; i < job.length; i++) {
+        console.log(`${i + 1}. ${job[i].name}`);
+        console.log(`Hoàn thành: ${job[i].complete}`);
+      }
+      break;
+    case "R":
+      console.log("Đây là nhiệm vụ học tập của bạn");
+      for (let i = 0; i < job.length; i++) {
+        console.log(`${i + 1}. ${job[i].name}`);
+        console.log(`Hoàn thành: ${job[i].complete}`);
+      }
+      break;
+    case "U":
+      let inputID = +prompt("Nhập ID muốn thay đổi");
+      let tempVal = prompt("Nhập tên mới cho tác vụ");
+      if (inputID <= 0 || inputID > job.length) {
+        alert("ID không tồn tại");
+      } else {
+        job[inputID - 1].name = tempVal;
+      }
+      for (let i = 0; i < job.length; i++) {
+        console.log(`${i + 1}. ${job[i].name}`);
+        console.log(`Hoàn thành: ${job[i].complete}`);
+      }
+      break;
+    case "complete":
+      let idInput = +prompt("Nhập ID muốn thay đổi");
+
+      if (idInput <= 0 || idInput > job.length) {
+        alert("ID không tồn tại");
+      } else {
+        job[idInput - 1].complete = !job[idInput - 1].complete;
+      }
+      for (let i = 0; i < job.length; i++) {
+        console.log(`${i + 1}. ${job[i].name}`);
+        console.log(`Hoàn thành: ${job[i].complete}`);
+      }
+      break;
+    case "D":
+      let Idip = +prompt("nhập ID");
+      job.splice(Idip - 1, 1);
+      for (let i = 0; i < job.length; i++) {
+        console.log(`${i + 1}. ${job[i].name}`);
+        console.log(`Hoàn thành: ${job[i].complete}`);
+      }
+      break;
+    case "E":
+      break;
+    default:
+      break;
+  }
+}
+
+/* 
+  [{name: "Hello"}, {}, {}, name: java]
+  arr[0].name
+*/
