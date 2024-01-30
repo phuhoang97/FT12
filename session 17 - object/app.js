@@ -325,86 +325,234 @@
 //     }
 // }
 //2.1
-let job = [
-  {
-    name: "HTML",
-    complete: false,
-  },
-  {
-    name: "CSS",
-    complete: false,
-  },
-  {
-    name: "JavaScript",
-    complete: false,
-  },
-];
+// let job = [
+//   {
+//     name: "HTML",
+//     complete: false,
+//   },
+//   {
+//     name: "CSS",
+//     complete: false,
+//   },
+//   {
+//     name: "JavaScript",
+//     complete: false,
+//   },
+// ];
 
 //2.2
 
-let inputUser;
-while (inputUser !== "E") {
-  inputUser = prompt("Nhap C/R/U/D/Complete/E");
-  switch (inputUser) {
-    case "C":
-      let inputValue = prompt("Nhap value");
-      let newObject = { name: inputValue, complete: false };
-      job.push(newObject);
-      console.log("Đây là nhiệm vụ học tập của bạn");
-      for (let i = 0; i < job.length; i++) {
-        console.log(`${i + 1}. ${job[i].name}`);
-        console.log(`Hoàn thành: ${job[i].complete}`);
-      }
-      break;
-    case "R":
-      console.log("Đây là nhiệm vụ học tập của bạn");
-      for (let i = 0; i < job.length; i++) {
-        console.log(`${i + 1}. ${job[i].name}`);
-        console.log(`Hoàn thành: ${job[i].complete}`);
-      }
-      break;
-    case "U":
-      let inputID = +prompt("Nhập ID muốn thay đổi");
-      let tempVal = prompt("Nhập tên mới cho tác vụ");
-      if (inputID <= 0 || inputID > job.length) {
-        alert("ID không tồn tại");
-      } else {
-        job[inputID - 1].name = tempVal;
-      }
-      for (let i = 0; i < job.length; i++) {
-        console.log(`${i + 1}. ${job[i].name}`);
-        console.log(`Hoàn thành: ${job[i].complete}`);
-      }
-      break;
-    case "complete":
-      let idInput = +prompt("Nhập ID muốn thay đổi");
+// let inputUser;
+// while (inputUser !== "E") {
+//   inputUser = prompt("Nhap C/R/U/D/Complete/E");
+//   switch (inputUser) {
+//     case "C":
+//       let inputValue = prompt("Nhap value");
+//       let newObject = { name: inputValue, complete: false };
+//       job.push(newObject);
+//       console.log("Đây là nhiệm vụ học tập của bạn");
+//       for (let i = 0; i < job.length; i++) {
+//         console.log(`${i + 1}. ${job[i].name}`);
+//         console.log(`Hoàn thành: ${job[i].complete}`);
+//       }
+//       break;
+//     case "R":
+//       console.log("Đây là nhiệm vụ học tập của bạn");
+//       for (let i = 0; i < job.length; i++) {
+//         console.log(`${i + 1}. ${job[i].name}`);
+//         console.log(`Hoàn thành: ${job[i].complete}`);
+//       }
+//       break;
+//     case "U":
+//       let inputID = +prompt("Nhập ID muốn thay đổi");
+//       let tempVal = prompt("Nhập tên mới cho tác vụ");
+//       if (inputID <= 0 || inputID > job.length) {
+//         alert("ID không tồn tại");
+//       } else {
+//         job[inputID - 1].name = tempVal;
+//       }
+//       for (let i = 0; i < job.length; i++) {
+//         console.log(`${i + 1}. ${job[i].name}`);
+//         console.log(`Hoàn thành: ${job[i].complete}`);
+//       }
+//       break;
+//     case "complete":
+//       let idInput = +prompt("Nhập ID muốn thay đổi");
 
-      if (idInput <= 0 || idInput > job.length) {
-        alert("ID không tồn tại");
-      } else {
-        job[idInput - 1].complete = !job[idInput - 1].complete;
-      }
-      for (let i = 0; i < job.length; i++) {
-        console.log(`${i + 1}. ${job[i].name}`);
-        console.log(`Hoàn thành: ${job[i].complete}`);
-      }
-      break;
-    case "D":
-      let Idip = +prompt("nhập ID");
-      job.splice(Idip - 1, 1);
-      for (let i = 0; i < job.length; i++) {
-        console.log(`${i + 1}. ${job[i].name}`);
-        console.log(`Hoàn thành: ${job[i].complete}`);
-      }
-      break;
-    case "E":
-      break;
-    default:
-      break;
-  }
-}
+//       if (idInput <= 0 || idInput > job.length) {
+//         alert("ID không tồn tại");
+//       } else {
+//         job[idInput - 1].complete = !job[idInput - 1].complete;
+//       }
+//       for (let i = 0; i < job.length; i++) {
+//         console.log(`${i + 1}. ${job[i].name}`);
+//         console.log(`Hoàn thành: ${job[i].complete}`);
+//       }
+//       break;
+//     case "D":
+//       let Idip = +prompt("nhập ID");
+//       job.splice(Idip - 1, 1);
+//       for (let i = 0; i < job.length; i++) {
+//         console.log(`${i + 1}. ${job[i].name}`);
+//         console.log(`Hoàn thành: ${job[i].complete}`);
+//       }
+//       break;
+//     case "E":
+//       break;
+//     default:
+//       break;
+//   }
+// }
 
 /* 
   [{name: "Hello"}, {}, {}, name: java]
   arr[0].name
 */
+
+// Bài 1:
+// let danhBa = [
+//   {
+//     name: "Anh Tự",
+//     phone: 123,
+//     email: "anhtu@example.com",
+//   },
+//   {
+//     name: "Anh Tôn",
+//     phone: 456,
+//     email: "anhton@example.com",
+//   },
+//   {
+//     name: "Anh Hiếu",
+//     phone: 789,
+//     email: "anhhieu@example.com",
+//   },
+// ];
+// let action;
+
+// // Hàm hiển thị
+// function displayData() {
+//   for (let i = 0; i < danhBa.length; i++) {
+//     console.log(`${i + 1}. Tên người dùng là: ${danhBa[i].name}
+//     Số điện thoại người dùng là: ${danhBa[i].phone}
+//     Email người dùng là: ${danhBa[i].email} `);
+//   }
+// }
+
+// // Hàm thêm mới danh bạ
+// function addData() {
+//   let name = prompt("Nhap ten");
+//   let phone = prompt("Nhap dien thoai");
+//   let email = prompt("Nhap email");
+//   let newObj = { name, phone, email };
+//   /*
+//   <=> Enhandced Object Literals
+//     {
+//       name: name,
+//       phone: phone,
+//       email: email
+//     }
+//   */
+//   danhBa.push(newObj);
+//   displayData();
+// }
+
+// // Hàm cập nhật danh bạ
+// function updateData() {
+//   let updateName = prompt("Nhập tên muốn thay đổi");
+//   /*
+//     1. update số điện thoại
+//     2. update email
+//     3. update cả 2
+//     default. alert không hợp lệ
+//     4.Xóa Người khỏi Danh Bạ
+//   */
+//   let check = false;
+//   for (let i = 0; i < danhBa.length; i++) {
+//     if (danhBa[i].name == updateName) {
+//       let choice = +prompt(
+//         "Nhập muốn sửa lựa chọn 1.số điện thoại  2.email  3. Sửa cả 2 thông tin"
+//       );
+//       check = true;
+//       switch (choice) {
+//         case 1:
+//           let newPhone = prompt("Nhập số điện thoại mới");
+//           danhBa[i].phone = newPhone;
+//           break;
+//         case 2:
+//           let newEmail = prompt("Nhập email mới");
+//           danhBa[i].email = newEmail;
+//           break;
+//         case 3:
+//           let newPhone1 = prompt("Nhập số điện thoại mới");
+//           danhBa[i].phone = newPhone1;
+//           let newEmail1 = prompt("Nhập email mới");
+//           danhBa[i].email = newEmail1;
+//           break;
+//         default:
+//           alert("Nhập sai giá trị");
+//           break;
+//       }
+//     }
+//   }
+//   if (check == false) {
+//     alert("Không có tên trong danh bạ");
+//   }
+
+//   displayData();
+// }
+
+// // Hàm xóa danh bạ
+// let deleteData = () => {
+//   let delID = Number(prompt("Mời nhập vị trí muốn xóa: ")) - 1;
+//   delID >= 0 && delID <= danhBa.length
+//     ? danhBa.splice(delID, 1)
+//     : alert("Nhập vị trí không hợp lệ");
+//   displayData();
+// };
+
+// // Hàm tìm kiếm
+// function searchData() {
+//   let inputSearch = prompt(`Nhập tên muốn tìm`);
+//   for (let i in danhBa) {
+//     if (danhBa[i].name == inputSearch) {
+//       console.log(
+//         `Đối tượng tìm kiếm là:
+//         ${danhBa[i].name} - ${danhBa[i].phone} - ${danhBa[i].email} `
+//       );
+//     }
+//   }
+// }
+
+// do {
+//   console.log("==== Quản lý danh bạn ====");
+//   console.log(`1. Hiển thị danh sách người trong danh bạ`);
+//   console.log(`2. Thêm mới người trong danh bạ`);
+//   console.log(`3. Cập nhật người trong danh bạ`);
+//   console.log(`4. Xóa người trong danh bạ`);
+//   console.log(`5.Tìm kiếm theo tên`);
+//   console.log(`*****************************************`);
+//   action = prompt("Nhập hành động (Create/Read/Update/Delete/Search/End)");
+//   switch (action) {
+//     case "1":
+//       displayData();
+//       break;
+//     case "2":
+//       addData();
+//       break;
+//     case "3":
+//       updateData();
+//       break;
+
+//     case "4":
+//       deleteData();
+//       break;
+//     case "5":
+//       searchData();
+//       break;
+//     // default:
+//     //   alert("Số nhập không hợp lệ");
+//     //   break;
+//   }
+// } while (action !== "0");
+
+// Làm bài tập 2 và đọc trước bài DOM
