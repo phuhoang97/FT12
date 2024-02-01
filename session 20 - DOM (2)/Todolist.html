@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TodoList</title>
   </head>
+  <style>
+    .complete {
+      text-decoration: line-through;
+    }
+  </style>
   <body>
     <form id="form">
       <input type="text" id="input-form" placeholder="Nhập dữ liệu ..." />
@@ -12,14 +17,14 @@
     </form>
 
     <ul id="todolist">
-      <li>
+      <!-- <li>
         <span>Rửa bát</span>
         <button>Delete</button>
       </li>
       <li>
         <span>Quét nhà</span>
         <button>Delete</button>
-      </li>
+      </li> -->
     </ul>
 
     <script>
@@ -35,19 +40,47 @@
         let valueInput = input.value;
         // Bước 2: Tạo thẻ li và tạo button => createElement
         const li = document.createElement("li");
-        const btn = document.createElement("button");
+        const btnDelete = document.createElement("button");
+        btnDelete.classList.add("btn");
+        btnDelete.classList.add("btn-danger");
+        // console.log(btnDelete);
         // Bước 3: Thêm nội dung vào thẻ li và button
         li.innerHTML = valueInput;
-        btn.innerHTML = "Delete";
+        btnDelete.innerHTML = "Delete";
         // Bước 3.1: appendChild button vào li
-        li.appendChild(btn);
+        li.appendChild(btnDelete);
         // Bước 4: appendChild li vào ul
         ul.appendChild(li);
         input.value = "";
+
+        // Cách 1:
+        // btnDelete.onclick = () => {
+        //   li.remove();
+        // };
+
+        // li.addEventListener("click", () => {
+        //   if (li.classList.contains("complete")) {
+        //     li.classList.remove("complete");
+        //   } else {
+        //     li.classList.add("complete");
+        //   }
+        // });
       });
 
+      // Update
+
       ul.addEventListener("click", (event) => {
-        console.log(event.target); // Ủy quyền sự kiện
+        // console.log(event.target); // Ủy quyền sự kiện
+        if (event.target.classList.contains("btn-danger")) {
+          //   console.log(event.target.parentElement);
+          event.target.parentElement.remove();
+        }
+
+        if (event.target.classList.contains("complete")) {
+          event.target.classList.remove("complete");
+        } else {
+          event.target.classList.add("complete");
+        }
       });
     </script>
   </body>
