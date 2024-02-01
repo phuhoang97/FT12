@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTVN 2</title>
+  </head>
+  <body>
+    <button id="change">Change Text</button>
+    <p id="text">Đoạn văn bản ban đầu</p>
+  </body>
+  <script>
+    let change = document.querySelector("#change");
+    let text = document.getElementById("text");
+    let check = true; // false
+    change.addEventListener("click", function () {
+      setInterval(() => {
+        if (check) {
+          text.innerHTML = "Đoạn văn bản hi";
+        } else {
+          text.innerHTML = "Đoạn văn bản ban đầu";
+        }
+        check = !check;
+      }, 500);
+    });
+  </script>
+</html>

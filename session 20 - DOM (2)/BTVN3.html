@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTVN 3</title>
+  </head>
+  <body>
+    <!-- Phóng to thu nhỏ văn bản -->
+    <p id="para">Anh H đẹp trai</p>
+    <button onclick="increaseSize()">Phóng to</button>
+    <button onclick="decreaseSize()">Thu nhỏ</button>
+
+    <script>
+      const paragragh = document.getElementById("para");
+      //   console.log(paragragh.style.fontSize);
+      let currentSize = 16;
+      function decreaseSize() {
+        currentSize -= 2;
+        paragragh.style.fontSize = currentSize + "px";
+      }
+      function increaseSize() {
+        currentSize += 2;
+        paragragh.style.fontSize = currentSize + "px";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM (2) - Chữa bài tập</title>
+  </head>
+  <style>
+    .main {
+      background-color: antiquewhite;
+      width: 310px;
+      height: 190px;
+    }
+    .color {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 100px;
+      gap: 5px;
+    }
+    .color1 {
+      background-color: blueviolet;
+      border: 2px solid black;
+    }
+    .color2 {
+      background-color: rgb(136, 255, 136);
+      border: 2px solid black;
+    }
+    .color3 {
+      background-color: rgb(254, 221, 130);
+      border: 2px solid black;
+    }
+  </style>
+  <body>
+    <div class="main" id="main">
+      <h2>Change background color</h2>
+      <p>Move over the square</p>
+      <div class="color">
+        <div class="color1" id="color1"></div>
+        <div class="color2" id="color2"></div>
+        <div class="color3" id="color3"></div>
+      </div>
+    </div>
+
+    <script>
+      const color1 = document.getElementById("color1");
+      const color2 = document.getElementById("color2");
+      const color3 = document.getElementById("color3");
+      const main = document.getElementById("main");
+      color1.onmouseover = () => {
+        setTimeout(() => {
+          main.style.background = "blueviolet";
+        }, 1000);
+      };
+      color2.onmouseover = () => {
+        setTimeout(() => {
+          main.style.background = "rgb(136, 255, 136";
+        }, 1000);
+      };
+
+      color3.onmouseover = () => {
+        setTimeout(() => {
+          main.style.background = "rgb(254, 221, 130)";
+        }, 1000);
+      };
+    </script>
+  </body>
+</html>

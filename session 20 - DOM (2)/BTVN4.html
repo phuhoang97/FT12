@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTVN 4</title>
+  </head>
+  <body>
+    <form id="formInput">
+      <input id="ip" type="text" placeholder="nhập dữ liệu" />
+      <button id="btn" type="submit">Click me</button>
+    </form>
+    <script>
+      const inPut = document.getElementById("ip");
+      const form = document.getElementById("formInput");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log(inPut.value);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTVN 1</title>
+  </head>
+
+  <body id="body">
+    <button id="btn">thay đổi màu sắc</button>
+    <script>
+      const body = document.getElementById("body");
+      const btn = document.getElementById("btn");
+      function random() {
+        return Math.floor(Math.random() * 256);
+      }
+      btn.onclick = () => {
+        body.style.backgroundColor = `rgb(${random()},${random()},${random()}`;
+      };
+    </script>
+  </body>
+</html>

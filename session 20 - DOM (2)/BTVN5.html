@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTVN5</title>
+  </head>
+  <body>
+    <style>
+      .vuong {
+        height: 150px;
+        width: 150px;
+        background-color: pink;
+        border: 1px solid black;
+      }
+      .display {
+        display: none;
+      }
+    </style>
+    <button id="anhien">Ẩn/Hiện</button>
+    <div id="vuong" class="vuong">Hello World!!!</div>
+    <script>
+      let anhien = document.getElementById("anhien");
+      let vuong = document.getElementById("vuong");
+
+      anhien.addEventListener("click", () => {
+        if (vuong.classList.contains("display")) {
+          vuong.classList.remove("display");
+        } else {
+          vuong.classList.add("display");
+        }
+      });
+    </script>
+  </body>
+</html>

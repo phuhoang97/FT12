@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>baitap5</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .bai5 {
+        width: 80vw;
+        height: 50vh;
+        background-color: black;
+        color: white;
+        padding: 50px 20px;
+      }
+      .bai5-dark {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bai5" id="bai5">
+      <h3>Toggle Dark/Light Mode</h3>
+      <br />
+      <p>
+        Click the button to toggle between dark and light mode for this page
+      </p>
+      <br />
+      <button id="toggle-button">Toggle dark mode</button>
+    </div>
+    <script>
+      const toggleButton = document.getElementById("toggle-button");
+      const bai5Div = document.getElementById("bai5");
+      // Cách 1:
+      bai5Div.addEventListener("click", () => {
+        console.log(bai5Div.classList.contains("bai5-dark")); // false
+        if (bai5Div.classList.contains("bai5-dark")) {
+          // true
+          bai5Div.classList.remove("bai5-dark");
+        } else {
+          bai5Div.classList.add("bai5-dark");
+        }
+      });
+
+      // Cách 2:
+      // toggleButton.onclick = () => {
+      //   bai5Div.classList.toggle("bai5-dark");
+      // };
+    </script>
+  </body>
+</html>
