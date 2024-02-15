@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai thuc hanh 1</title>
+  </head>
+  <body>
+    <form id="main-form">
+      <input
+        type="text"
+        id="input-form"
+        placeholder="Nhập cầu thủ yêu thích ..."
+      />
+      <button id="add-player">Thêm cầu thủ</button>
+      <button id="delete-player">Xóa cầu thủ</button>
+    </form>
+
+    <ul id="display-name"></ul>
+
+    <script>
+      const form = document.getElementById("main-form");
+      const input = document.getElementById("input-form");
+      const addPlayer = document.getElementById("add-player");
+      const deletePlayer = document.getElementById("delete-player");
+      const ul = document.getElementById("display-name");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // B1: Lấy dữ liệu ô input
+        let inputValue = input.value;
+        // B2: Tạo thẻ li
+        const li = document.createElement("li");
+        // B3: gán giá trị cho li
+        li.innerHTML = inputValue;
+        // B4: Gán li cho ul
+        ul.appendChild(li);
+        input.value = "";
+
+        const listLi = document.getElementsByTagName("li");
+        let arrPlayer = [];
+        for (let i = 0; i < listLi.length; i++) {
+          arrPlayer.push(listLi[i].outerText);
+        }
+        localStorage.setItem("player", JSON.stringify(arrPlayer));
+      });
+
+      function displayPlayer() {
+        let getLocal = JSON.parse(localStorage.getItem("player"));
+        for (let i = 0; i < getLocal.length; i++) {
+          let newLi = document.createElement("li");
+          newLi.innerHTML = getLocal[i];
+          ul.appendChild(newLi);
+        }
+      }
+      displayPlayer();
+    </script>
+  </body>
+</html>

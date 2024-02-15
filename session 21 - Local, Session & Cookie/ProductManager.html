@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Manager</title>
+  </head>
+  <body>
+    <h2>Quản lý sản phẩm</h2>
+    <!-- Form người dùng nhập -->
+    <form id="main-form">
+      <label>ID: </label>
+      <input type="text" id="id-product" />
+      <br />
+
+      <label>Name Product: </label>
+      <input type="text" id="name-product" />
+      <br />
+
+      <label>Price: </label>
+      <input type="text" id="price-product" />
+      <br />
+
+      <label>Category: </label>
+      <input type="text" id="category-product" />
+      <br />
+
+      <button type="submit" id="btn-submit">Add</button>
+    </form>
+    <br />
+    <br />
+    <br />
+    <!-- Table hiển thị dữ liệu -->
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="body-table"></tbody>
+    </table>
+
+    <script src="./ProductManager.js"></script>
+  </body>
+</html>

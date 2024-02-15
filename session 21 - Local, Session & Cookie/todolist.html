@@ -4,28 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TodoList</title>
+    <style>
+      .complete {
+        text-decoration: line-through;
+      }
+    </style>
   </head>
-  <style>
-    .complete {
-      text-decoration: line-through;
-    }
-  </style>
   <body>
     <form id="form">
-      <input type="text" id="input-form" placeholder="Nhập dữ liệu ..." />
+      <input type="text" id="input-form" placeholder="Nhập công việc mới ..." />
       <button type="submit" id="btn-submit">Add</button>
     </form>
 
-    <ul id="todolist">
-      <!-- <li>
-        <span>Rửa bát</span>
-        <button>Delete</button>
-      </li>
-      <li>
-        <span>Quét nhà</span>
-        <button>Delete</button>
-      </li> -->
-    </ul>
+    <ul id="todolist"></ul>
 
     <script>
       const form = document.getElementById("form");
@@ -33,23 +24,15 @@
       const btn = document.getElementById("btn-submit");
       const ul = document.getElementById("todolist");
 
-      // Update
-      let isUpdateMode = false;
-      let updatingElement = null;
+      // Load TodoList from localStorage
+      const storedTodoList = JSON.parse(localStorage.getItem("todoList")) || [];
+      ul.innerHTML = storedTodoList.join("");
 
       form.addEventListener("submit", (e) => {
-        // Chặn sự kiện mặc định của thẻ form
         e.preventDefault();
-        // Bước 1: Lấy dữ liệu trong input
         let valueInput = input.value;
 
-        if (isUpdateMode) {
-          updatingElement.firstChild.textContent = valueInput;
-          input.value = "";
-          isUpdateMode = false;
-          updatingElement = null;
-          btn.textContent = "Add";
-        } else {
+        if (valueInput.trim() !== "") {
           const li = document.createElement("li");
           const btnDelete = document.createElement("button");
           const btnUpdate = document.createElement("button");
@@ -66,31 +49,42 @@
 
           ul.appendChild(li);
           input.value = "";
+
+          // Save TodoList to localStorage
+          saveTodoList();
         }
       });
 
       ul.addEventListener("click", (event) => {
         if (event.target.classList.contains("btn-danger")) {
           event.target.parentElement.remove();
+          // Save TodoList to localStorage
+          saveTodoList();
         }
 
         if (event.target.classList.contains("btn-info")) {
-          isUpdateMode = true;
-          updatingElement = event.target.parentElement;
-          input.value = updatingElement.firstChild.textContent;
-          btn.textContent = "Update";
+          const updatedText = prompt(
+            "Enter the updated text:",
+            event.target.parentElement.firstChild.textContent
+          );
+          if (updatedText !== null) {
+            event.target.parentElement.firstChild.textContent = updatedText;
+            // Save TodoList to localStorage
+            saveTodoList();
+          }
         }
 
-        // Exclude the "Update" button from triggering the completion style
-        if (
-          event.target.classList.contains("complete") &&
-          !event.target.classList.contains("btn-info")
-        ) {
-          event.target.classList.remove("complete");
-        } else if (!event.target.classList.contains("btn-info")) {
-          event.target.classList.add("complete");
+        if (event.target.tagName === "LI") {
+          event.target.classList.toggle("complete");
+          // Save TodoList to localStorage
+          saveTodoList();
         }
       });
+
+      function saveTodoList() {
+        const todoListItems = Array.from(ul.children).map((li) => li.outerHTML);
+        localStorage.setItem("todoList", JSON.stringify(todoListItems));
+      }
     </script>
   </body>
 </html>
