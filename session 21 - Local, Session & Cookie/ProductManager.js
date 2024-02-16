@@ -64,6 +64,7 @@ form.addEventListener("submit", (e) => {
   renderProduct();
 });
 
+// Hàm delete
 function deleteProduct(index) {
   //   console.log(index);
   // B1: Lấy dữ liệu trên local
@@ -76,6 +77,7 @@ function deleteProduct(index) {
   renderProduct();
 }
 
+// Hàm edit
 function editProduct(index) {
   const getDataLocal = JSON.parse(localStorage.getItem("list-product"));
 

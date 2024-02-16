@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager Product</title>
+  </head>
+  <body>
+    <!-- Form người dùng nhập -->
+    <form id="form-input">
+      <!-- <label>ID</label>
+      <input type="text" id="id-product" />
+      <br /> -->
+
+      <label>Name Product</label>
+      <input type="text" id="name-product" />
+      <br />
+
+      <label>Price</label>
+      <input type="text" id="price-product" />
+      <br />
+
+      <label>Category</label>
+      <input type="text" id="category-product" />
+      <br />
+
+      <button type="submit" id="btn-submit">Add</button>
+    </form>
+
+    <!-- Hiển thị dữ liệu -->
+    <table border="1">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Name Product</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="data-product"></tbody>
+    </table>
+
+    <script src="./managerProduct.js"></script>
+  </body>
+</html>
